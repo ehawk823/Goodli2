@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :authenticate_user!, only: [:show]
+
   def new
   end
 
@@ -7,4 +10,8 @@ class UsersController < ApplicationController
 
   def show
   end
+
+  def sign_up
+  end
+
 end
