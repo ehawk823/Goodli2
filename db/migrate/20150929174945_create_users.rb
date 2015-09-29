@@ -5,8 +5,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :volunteer_experience
       t.string :location
       t.string :bio
-
-      t.timestamps null: false
+      t.string :email
+      t.string :phone
     end
   end
 end
