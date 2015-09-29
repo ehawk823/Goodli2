@@ -1,0 +1,20 @@
+
+<h1>
+  Name:
+  <div id = "name_input">
+    <%= current_user.name %>
+  </div>
+  <div id = "name_form">
+    <%= form_for current_user, remote: true do |f|  %>
+      <%= f.text_field :name %>
+    <% end %>
+  </div>
+  <button id = "edit">Edit</button>
+</h1>
+
+
+<h2>Volunteer Experience / Projects</h2>
+<h2>Petitions - Pulled from Change.org via API</h2>
+<h2>Projects - Pulled from Kickstarter via API</h2>
+<h2>Personal Karma D3 Graphic</h2>
+<h2>Recent Karma Interactions</h2>
