@@ -11,24 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150928211204) do
-
-  create_table "karma_event_tables", force: :cascade do |t|
-    t.integer  "user_id_id"
-    t.integer  "karma_point"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "karma_event_tables", ["user_id_id"], name: "index_karma_event_tables_on_user_id_id"
-
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "volunteer_experience"
-    t.string   "location"
-    t.string   "bio"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end
