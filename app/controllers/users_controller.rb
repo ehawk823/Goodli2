@@ -12,6 +12,10 @@ class UsersController < ApplicationController
   end
 
   def log_in
+    redirect_to action: "show"
+  end
+
+  def sign_out
   end
 
   def sign_up

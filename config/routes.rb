@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'users/log_in'
 
+  get 'users/sign_out'
+
   root 'home#index'
   resources :users
 end
