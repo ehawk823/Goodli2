@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'users/sign_up'
 
+  get 'users/log_in'
+
   root 'home#index'
   resources :users
 end

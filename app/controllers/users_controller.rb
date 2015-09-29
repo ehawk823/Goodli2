@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!, only: [:show]
+  before_action :authenticate_user!, only: [:show, :log_in]
 
   def new
   end
@@ -9,6 +9,9 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
+
+  def log_in
   end
 
   def sign_up
