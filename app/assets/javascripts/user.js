@@ -3,5 +3,6 @@ $( document ).ready(function() {
   $('#edit').click(function() {
     $("#name_form").show();
     $("#name_input").hide();
+    $("#edit").hide();
   });
 });
