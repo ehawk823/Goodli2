@@ -1,0 +1,7 @@
+<%= form_tag('/events', method: 'post') do %>
+  <%= label_tag("Title") %>
+  <%= text_field_tag :title %>
+  <%= label_tag("Description") %>
+  <%= text_field_tag :description %>
+  <%= submit_tag('Submit') %>
+<% end %>
