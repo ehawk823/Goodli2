@@ -7,14 +7,27 @@
   <div id = "name_form">
     <%= form_for current_user, remote: true do |f|  %>
       <%= f.text_field :name %>
+      <%= f.submit 'Update Name'%>
     <% end %>
   </div>
   <button id = "edit">Edit</button>
 </h1>
 
+<h2>
+  Location:
+  <div id = "location_input">
+    <%= current_user.location %>
+  </div>
+  <div id = "location_form">
+    <%= form_for current_user, remote: true do |f|  %>
+      <%= f.text_field :location %>
+      <%= f.submit 'Update Location'%>
+    <% end %>
+  </div>
+  <button id = "edit_location">Edit</button>
+</h2>
 
-<h2>Volunteer Experience / Projects</h2>
-<h2>Petitions - Pulled from Change.org via API</h2>
-<h2>Projects - Pulled from Kickstarter via API</h2>
+
+<h2>User Karma Events </h2>
+<h2>Give User Karma Form</h2>
 <h2>Personal Karma D3 Graphic</h2>
-<h2>Recent Karma Interactions</h2>
