@@ -12,6 +12,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'pg'
 gem 'devise'
 gem 'best_in_place'
+gem 'rails-erd'
 
 group :development, :test do
   gem 'byebug'
