@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
-    @event = Event.all
+    @events = Event.all
+    @points = Point.all
   end
 
   def new
@@ -8,7 +9,12 @@ class EventsController < ApplicationController
   end
 
   def create
+    binding.pry
     @event = Event.new
+    @event.title = params["title"]
+    @event.description = params["description"]
+    @event.save
     redirect_to root_url
+
   end
 end

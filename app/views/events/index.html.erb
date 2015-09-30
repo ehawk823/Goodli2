@@ -4,9 +4,13 @@
 <h1> Homepage </h1>
 <h1>IMAGE GOES HERE</h1>
 <h2>List of Events</h2>
-<%= @event.each do |event| %>
-<%= event %>
+<% @events.each do |event| %>
+<%= event.title %>
 <% end %>
 <h2>Event creation form</h2>
 <%= render 'create' %>
 <h2>Karma point index</h2>
+<% @points.each do |point| %>
+<%= point.value %>
+<% end %>
+
