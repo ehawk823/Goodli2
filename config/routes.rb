@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   get 'users/show'
   patch '/users/:id', to: 'users#update'
   get 'users/update'
-  root 'event#index'
+  root 'events#index'
+  # get 'event#new'
+  resources :events
 end
