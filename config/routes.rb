@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get 'users/show'
   get 'users/update'
   root 'event#index'
+  # get 'event#new'
+  resources :events
 end
