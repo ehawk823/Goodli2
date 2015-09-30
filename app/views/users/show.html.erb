@@ -27,6 +27,20 @@
   <button id = "edit_location">Edit</button>
 </h2>
 
+<h2>
+  Social Impact Mission:
+  <div id = "mission_input">
+    <%= current_user.bio %>
+  </div>
+  <div id = "mission_form">
+    <%= form_for current_user, remote: true do |f|  %>
+      <%= f.text_field :bio %>
+      <%= f.submit 'Update Mission Statement'%>
+    <% end %>
+  </div>
+  <button id = "edit_mission">Edit</button>
+</h2>
+
 
 <h2>User Karma Events </h2>
 <h2>Give User Karma Form</h2>
