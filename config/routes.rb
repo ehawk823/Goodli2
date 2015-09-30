@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, :only => [:show, :index]
   get 'users/show'
   get 'users/update'
-  root 'event#index'
+  root 'events#index'
   # get 'event#new'
   resources :events
 end
