@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @user = User.find_by_id(@id)
   end
 
+  def index
+    @users = User.all
+  end
+
   def update
     if params[:user][:name] == nil
       @name = current_user.name
