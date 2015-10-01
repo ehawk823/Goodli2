@@ -1,3 +1,7 @@
+<% if user_signed_in? %>
+  <%= link_to "Profile", controller: "users", action: "show", id: current_user.id %>
+<% end %>
+
 <h1>Name: <%= @user.name %></h1>
 <h2>Location: <%= @user.location %></h2>
 <h2>Mission: <%= @user.bio %></h2>
@@ -8,10 +12,9 @@
     <h2>Give <%=@user.name%> Karma for something awesome they've done! </h2>
     <%= form_tag('/points', method: 'post') do %>
       <%= label_tag("Please select an event to award a karma point") %>
-      <!-- <%= text_field_tag :event_id %> -->
       <%= hidden_field_tag :receiver_id, @user.id %>
       <%= hidden_field_tag :sender_id, current_user.id %>
-      <%= collection_select :events, :id, Event.all, :id, :title %>
+      <%= collection_select :events, :id, @user.events, :id, :title %>
       <%= submit_tag('Submit') %>
     <% end %>
   <% end %>
