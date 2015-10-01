@@ -9,7 +9,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    binding.pry
     @event = Event.new
     @event.title = params["title"]
     @event.description = params["description"]
