@@ -5,4 +5,5 @@
 <h1>Goodli Users</h1>
 <% @users.each do |user| %>
 <%= link_to user.name, controller: "users", action: "show", id: user.id %>
+<%= Point.where(receiver_id: user.id).length %>
 <% end %>

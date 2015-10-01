@@ -12,7 +12,7 @@ class PointsController < ApplicationController
     @user = User.find(params["receiver_id"])
     @event.points << @point
     @point.save
-    redirect_to root_url
+    redirect_to :back
   end
 
   def show
