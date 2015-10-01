@@ -14,6 +14,5 @@ class EventsController < ApplicationController
     @event.description = params["description"]
     @event.save
     redirect_to root_url
-
   end
 end

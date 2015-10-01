@@ -2,8 +2,14 @@
 <h2>Location: <%= @user.location %></h2>
 <h2>Mission: <%= @user.bio %></h2>
 
-
-<h2>Tell us something awesome <%=@user.name%> did to give them some Karma! </h2>
-
+<h2>Give <%=@user.name%> Karma for something awesome they've done! </h2>
+  <%= form_tag('/points', method: 'post') do %>
+    <%= label_tag("Please select an event from the list below") %>
+    <%= text_field_tag :event_id %>
+    <%= hidden_field_tag :receiver_id, @user.id %>
+    <%= hidden_field_tag :sender_id, current_user.id %>
+    <%= submit_tag('Submit') %>
+  <% end %>
+  
 <h2>Users recent karma exchanges</h2>
 <h2>Users D3 graphic</h2>
