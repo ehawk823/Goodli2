@@ -6,10 +6,12 @@ class PointsController < ApplicationController
   def create
     @point = Point.new
     @point.value = 1
-    @point.receiver_id = params["receiver_id"]
-    @point.event_id = params["event_id"]
-    @point.sender_id = current_user.id
+    @point.receiver = User.find(params["receiver_id"])
+    @event = Event.find(params["events"]["id"])
+    @point.sender = User.find(params["sender_id"])
+    @user = User.find(params["receiver_id"])
     @point.save
+    binding.pry
     redirect_to root_url
   end
 
