@@ -7,8 +7,10 @@
 <% @events.each do |event| %>
 <%= event.title %>
 <% end %>
+<% if user_signed_in? %>
 <h2>Event creation form</h2>
 <%= render 'create' %>
+<% end %>
 <h2>Karma point index</h2>
 
 <% @points.each do |point| %>
