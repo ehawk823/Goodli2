@@ -1,4 +1,5 @@
 class Petition
+  include PetitionsHelper
   include Change::Resources
   attr_accessor :client, :petition, :signature_count, :signature_count
 
