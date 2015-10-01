@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @id = params[:id]
     @user = User.find_by_id(@id)
+    @points_received = Point.where(receiver_id: 1)
   end
 
   def index

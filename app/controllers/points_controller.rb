@@ -10,8 +10,8 @@ class PointsController < ApplicationController
     @event = Event.find(params["events"]["id"])
     @point.sender = User.find(params["sender_id"])
     @user = User.find(params["receiver_id"])
+    @event.points << @point
     @point.save
-    binding.pry
     redirect_to root_url
   end
 
