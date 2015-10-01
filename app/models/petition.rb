@@ -1,7 +1,7 @@
 class Petition
   include PetitionsHelper
   include Change::Resources
-  attr_accessor :client, :petition, :title, :creator_name
+  attr_accessor :client, :petition, :loaded_petition, :title, :creator_name
 
   def initialize
     @client = Change::Requests::Client.new({ :api_key => ENV["CHANGE_KEY"], :secret_token => ENV["CHANGE_SECRET"] })
