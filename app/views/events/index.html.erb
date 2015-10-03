@@ -1,17 +1,81 @@
-<% if user_signed_in? %>
-  <%= link_to "Profile", controller: "users", action: "show", id: current_user.id %>
-<% end %>
-<%= link_to "Users", users_path %>
-<h1> Homepage </h1>
-<h1>IMAGE GOES HERE</h1>
-<h2>List of Events</h2>
-<% @events.each do |event| %>
-<h5><%= event.title %>
-<%= event.description %></h5>
-<% end %>
-<% if user_signed_in? %>
-<h2>Event creation form</h2>
-<%= render 'create' %>
-<% end %>
-<h2>Total Karma!</h2>
-<%= @points.length %>
+<header class="intro">
+
+    <!-- Video from YouTube. Have Questions? How To: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki -->
+    <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=TYrX7w1uIq8', containment:'body', autoPlay:true, realfullscreen:true, optimizeDisplay:true, loop:true, mute:true, startAt:0, stopAt: 200, quality:'auto', opacity:1, showControls: false, showYTLogo:false, vol:25}"></a>
+
+    <div class="intro-body">
+        <!-- <img src="img/logo.png" alt="" class="wow fadeIn" data-wow-duration="4s" data-wow-delay=".4s"> -->
+        <div id="clock" class="wow fadeIn" data-wow-duration="6s" data-wow-delay=".6s"></div>
+        <p class="intro-text wow fadeIn" data-wow-duration="7s" data-wow-delay=".7s">Goodli is COMING SOON. STAY TUNED!</p>
+
+    </div>
+
+    <div class="video-controls">
+        <a id="video-volume" class="fa fa-volume-off fa-lg" href="#"></a>
+        <a id="video-play" class="fa fa-pause fa-lg" href="#"></a>
+    </div>
+</header>
+
+
+<!-- Action2 Section -->
+<section class="action2 container-fluid text-center wow fadeIn">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div style="background:transparent !important" class="jumbotron">
+            <h1>List of Events</h1>
+              <% @events.each do |event| %>
+              <h3><%= event.title %>: <%= event.description %></h3>
+              <% end %>
+          </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="container-fluid text-center wow fadeIn">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <% if user_signed_in? %>
+          <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Create an Event</h2>
+          </div>
+          <div style="background:transparent !important" class="panel-body">
+            <%= render 'create' %>
+          </div>
+        </div>
+        <% end %>
+        </div>
+    </div>
+</section>
+
+<!-- About2 Section -->
+<section id="about2" class="container-fluid text-center wow fadeIn">
+    <div class="col-lg-10 col-lg-offset-1">
+        <h1>Karma Given to Date: <%= @points.length %></h1>
+    </div>
+</section>
+
+<!-- Action2 Section -->
+<section class="action2 container-fluid text-center wow fadeIn">
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <h2>Subscribe to our newsletter!</h2>
+            <!-- MailChimp Signup Form -->
+            <!-- Replace the form action in the line below with your MailChimp embed action! For more informatin on how to do this please visit the Docs! -->
+            <form role="form" action="//forbetterweb.us11.list-manage.com/subscribe/post?u=4f751a6c58b225179404715f0&amp;id=18fc72763a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-inline subscribe-form" target="_blank" novalidate="">
+                <div class="input-group input-group-lg">
+                    <input type="email" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="Email address...">
+        <span class="input-group-btn">
+            <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-white">Get notified!</button>
+        </span>
+                </div>
+                <div id="mce-responses">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+            </form>
+            <!-- End MailChimp Signup Form -->
+        </div>
+    </div>
+</section>
