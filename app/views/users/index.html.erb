@@ -1,4 +1,15 @@
-<h1>Goodli Users</h1>
+<section class="action2 container-fluid text-center wow fadeIn">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div style="background:transparent !important" class="jumbotron">
+            <h1>
+              <h1>Goodli Users</h1>
+            </h1>
+          </div>
+        </div>
+    </div>
+</section>
+
 <% @users.each do |user| %>
 <%= link_to user.name, controller: "users", action: "show", id: user.id %>
 <%= Point.where(receiver_id: user.id).length %>
