@@ -22,16 +22,32 @@
     Mission: <%= @user.bio %>
   </div>
 </div>
-
+<br></br>
 <h2>User's recent events</h2>
 <div class="jumbotron">
+<blockquote>
 <% @user.events.each do |event| %>
-<h3>Event: <%= event.title %></h3>
-<h4>Karma: <%= event.points.length %>
-  From: <% event.points.each do |point| %>
-        <%= point.sender.name %> -
+
+  <h3><%= event.title %></h3>
+<blockquote>
+<h4>Karma: <%= event.points.length %></h4>
+  <% array = [] %>
+<h4>From: <% event.points.each do |point| %>
+        <%array << point.sender.name %>
         <% end %>
+        <% new_array = array.uniq %>
+        <% new_array.each do |name| %>
+          <%= name %>,
+        <% end %>
+        <% if event.points.length == 0 %>
+          hmmm looks like nobody
+        <% else %>
+          and the universe!
+        <% end %>
+        </h4>
+</blockquote>
 <% end %> </h4>
+</blockquote>
 </div>
 
 <% if user_signed_in? %>
