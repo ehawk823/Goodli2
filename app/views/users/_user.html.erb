@@ -4,7 +4,7 @@
           <div style="background:transparent !important" class="jumbotron">
             <h1>
               <div id = "image_input">
-                <%= image_tag current_user.image.to_s %>
+                <%= image_tag current_user.image.to_s, size: "200"%>
               </div>
             </h1>
             <%= form_for current_user, :html => {:multipart => true}, remote: true do |f| %>
