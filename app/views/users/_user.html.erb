@@ -3,8 +3,16 @@
         <div class="col-lg-8 col-lg-offset-2">
           <div style="background:transparent !important" class="jumbotron">
             <h1>
-              Profile Picture Placeholder
+              <div id = "image_input">
+                <%= image_tag current_user.image.to_s %>
+              </div>
             </h1>
+            <%= form_for current_user, :html => {:multipart => true}, remote: true do |f| %>
+                <center><%= f.file_field :image %></center>
+                <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+                <br></br>
+                  <font color="black"><%= f.submit "Update Image" %></font>
+            <% end %>
           </div>
         </div>
     </div>

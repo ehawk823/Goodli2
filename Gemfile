@@ -14,6 +14,7 @@ gem 'devise'
 gem 'best_in_place'
 gem 'rails-erd'
 gem 'change-ruby'
+gem 'carrierwave' 
 
 group :development, :test do
   gem 'byebug'
@@ -45,4 +46,3 @@ group :production do
 end
 #make with the prettyz
 gem 'bootstrap-sass', '~> 3.3.5'
-
