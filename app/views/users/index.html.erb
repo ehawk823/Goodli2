@@ -22,7 +22,7 @@
                     <%= image_tag user.image.to_s, size: "150"%>
                   <% end %>
                    <p><%= link_to user.name, controller: "users", action: "show", id: user.id %></p></h4>
-                <p>Karma: <%= Point.where(receiver_id: user.id).length %></p>
+                <p>Karma Received: <%= Point.where(receiver_id: user.id).length %></p>
             </div>
           <% end %>
         </div>

@@ -55,7 +55,7 @@
 </div>
 
 <% if user_signed_in? %>
-  <h2>Give <%=@user.name%> Karma for something awesome they've done! </h2>
+  <h2>Give <%=@user.name%> Karma for something awesome they've done! You have <%= current_user.giveable_karma %> Karma left to give away.</h2>
   <%= form_tag('/points', method: 'post') do %>
     <%= label_tag("Please select an event to award a karma point") %>
     <%= hidden_field_tag :receiver_id, @user.id %>
@@ -65,7 +65,7 @@
   <% end %>
 <% end %>
 
-<h2>Karma: <%= @points_received.length %></h2>
+<h2>Karma Received: <%= @points_received.length %></h2>
 
 <section class="action2 container-fluid text-center wow fadeIn">
     <div class="row">
