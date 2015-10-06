@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   patch '/users/:id', to: 'users#update'
   get 'users/update'
   post '/points', to: 'points#create'
+  post 'events/rsvp'
   root 'events#index'
   # get 'event#new'
   resources :events

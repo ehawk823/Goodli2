@@ -14,8 +14,16 @@ class EventsController < ApplicationController
     @event.title = params["title"]
     @event.location = params["location"]
     @event.description = params["description"]
+    @event.host = User.find(params["host_id"])
     @event.users << current_user
     @event.save
     redirect_to root_url
   end
+
+  def rsvp
+    @event.users << current_user
+    @event.save
+    redirect_to root_url
+  end
+
 end
