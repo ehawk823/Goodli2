@@ -4,14 +4,17 @@
           <div style="background:transparent !important" class="jumbotron">
             <h1>
               <div id = "image_input">
-                <%= image_tag current_user.image.to_s, size: "200"%>
+                <% if current_user.image.model[:image] == nil %>
+                  <%= image_tag "icon-user-default.png", size: "200"%>
+                <% else %>
+                  <%= image_tag current_user.image.to_s, size: "200"%>
+                <% end %>
               </div>
             </h1>
             <%= form_for current_user, :html => {:multipart => true}, remote: true do |f| %>
-                <center><%= f.file_field :image %></center>
                 <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
-                <br></br>
                   <font color="black"><%= f.submit "Update Image" %></font>
+                  <center><%= f.file_field :image %></center>
             <% end %>
           </div>
         </div>
@@ -69,11 +72,25 @@
 <h2>Your Recent Events</h2>
   <% current_user.events.each do |event| %>
 <h3>Event: <%= event.title %></h3>
-<h4>Karma: <%= event.points.length %>
-    From: <% event.points.each do |point| %>
-          <%= point.sender.name %> -
-          <% end %>
-  <% end %> </h4>
+<blockquote>
+<h4>Karma: <%= event.points.length %></h4>
+  <% array = [] %>
+<h4>From: <% event.points.each do |point| %>
+        <%array << point.sender.name %>
+        <% end %>
+        <% new_array = array.uniq %>
+        <% new_array.each do |name| %>
+          <%= name %>,
+        <% end %>
+        <% if event.points.length == 0 %>
+          hmmm looks like nobody
+        <% else %>
+          and the universe!
+        <% end %>
+        </h4>
+</blockquote>
+<% end %> </h4>
+</blockquote>
 </div>
 
 <section class="action2 container-fluid text-center wow fadeIn">

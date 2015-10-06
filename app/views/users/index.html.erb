@@ -15,7 +15,13 @@
         <div class="row">
           <% @users.each do |user| %>
             <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay=".2s">
-                <h4><%= image_tag user.image.to_s, size: "150"%> <p><%= link_to user.name, controller: "users", action: "show", id: user.id %></p></h4>
+                <h4>
+                  <% if user.image.model[:image] == nil %>
+                    <%= image_tag "icon-user-default.png", size: "150"%>
+                  <% else %>
+                    <%= image_tag user.image.to_s, size: "150"%>
+                  <% end %>
+                   <p><%= link_to user.name, controller: "users", action: "show", id: user.id %></p></h4>
                 <p>Karma: <%= Point.where(receiver_id: user.id).length %></p>
             </div>
           <% end %>
