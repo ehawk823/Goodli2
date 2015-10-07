@@ -28,4 +28,10 @@ class EventsController < ApplicationController
     redirect_to root_url
   end
 
+  def destroy
+    @event = Event.find(params["event_id"])
+    @event.destroy
+    redirect_to root_url
+  end
+
 end
