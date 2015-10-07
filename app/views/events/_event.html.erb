@@ -1,0 +1,28 @@
+<h3><%= @event.title %>: <%= @event.description %></h3>
+  <ul>
+    <h4><li>Creator: <%= link_to @event.host.name, controller: "users", action: "show", id: @event.host.id %></li></h4>
+    <h4><li>Location: <%= @event.location %></li></h4>
+    <h4><li>Date: <%= @event.date %> </li></h4>
+    <h4><li>Attendees:
+      <% array = [] %>
+      <% @event.users.each do |user| %>
+        <%array <<  user.name %>
+      <% end %>
+        <% new_array = array.uniq %>
+        <% new_array.each do |name| %>
+          <%= name %>,
+        <% end %>
+        <% if array.length == 0 %>
+          Nobody yet!
+        <% else %>
+          and more to come!
+        <% end %>
+    </li></h4></ul>
+    <% if user_signed_in? %>
+      <% if @event.users.include?(current_user) == false %>
+        <font color="black"><%= button_to "RSVP", :event_id => @event.id, controller: 'events', action: "rsvp" %></font>
+      <% end %>
+      <% if current_user == @event.host %>
+        <font color="black"><%= button_to "Delete Event", :event_id => @event.id, controller: 'events', action: "destroy" %></font>
+      <% end %>
+    <% end %>

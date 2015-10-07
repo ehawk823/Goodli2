@@ -17,7 +17,6 @@ class EventsController < ApplicationController
     @event.host = User.find(params["host_id"])
     @event.users << current_user
     @event.save
-    redirect_to root_url
   end
 
   def rsvp
