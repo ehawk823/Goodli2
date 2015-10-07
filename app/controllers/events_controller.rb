@@ -21,8 +21,10 @@ class EventsController < ApplicationController
   end
 
   def rsvp
+    @event = Event.find(params["event_id"])
     @event.users << current_user
     @event.save
+    current_user.save
     redirect_to root_url
   end
 

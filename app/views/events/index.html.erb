@@ -30,12 +30,12 @@
                     <h4><li>Creator: <%= link_to event.host.name, controller: "users", action: "show", id: event.host.id %></li></h4>
                     <h4><li>Location: <%= event.location %></li></h4>
                     <h4><li>Date: <%= event.date %> </li></h4>
-                    <h4><li>Attendees: <% event.users.each do |user| %>
+                    <h4><li>Attendees:
+                      <% event.users.each do |user| %>
                         <%= user.name %> -
-                    </li></h4>
-                    <font color="black"><%= button_to "RSVP", controller: 'events', action: "rsvp" %></font>
-                  </ul>
-                  <% end %>
+                    <% end %>
+                    </li></h4></ul>
+                  <font color="black"><%= button_to "RSVP", :event_id => event.id, controller: 'events', action: "rsvp" %></font>
               <% end %>
           </div>
         </div>
