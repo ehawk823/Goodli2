@@ -8,4 +8,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :image, ImageUploader
+  after_create :add_karma
+
+  def add_karma
+    self.giveable_karma = 10
+    self.save
+  end
+
 end
