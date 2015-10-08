@@ -31,7 +31,7 @@
 <div class="jumbotron">
 <blockquote>
 <% @user.events.each do |event| %>
-
+<div id='<%= event.id %>'>
   <h3><%= event.title %></h3>
 <blockquote>
 <h4>Karma: <%= event.points.length %></h4>
@@ -54,9 +54,11 @@
 <% end %> </h4>
 </blockquote>
 </div>
+</div>
 
 <% if user_signed_in? %>
-  <h2>Give <%=@user.name%> Karma for something awesome they've done! You have <%= current_user.giveable_karma %> Karma left to give away.</h2>
+  <h2>Give <%=@user.name%> Karma for something awesome they've done!</h2>
+  <div id='giveable_karma'><h2>You have <%= current_user.giveable_karma %> Karma left to give away.</h2></div>
   <%= form_tag('/points', method: 'post', remote: true) do %>
     <%= label_tag("Please select an event to award a karma point") %>
     <%= hidden_field_tag :receiver_id, @user.id %>
