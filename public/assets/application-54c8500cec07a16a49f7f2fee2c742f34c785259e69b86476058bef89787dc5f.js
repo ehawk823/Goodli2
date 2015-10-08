@@ -2878,40 +2878,40 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
  * to offer multiple easing options
  *
  * TERMS OF USE - EASING EQUATIONS
- * 
- * Open source under the BSD License. 
- * 
+ *
+ * Open source under the BSD License.
+ *
  * Copyright Ã‚Â© 2001 Robert Penner
  * All rights reserved.
  *
  * TERMS OF USE - jQuery Easing
- * 
- * Open source under the BSD License. 
- * 
+ *
+ * Open source under the BSD License.
+ *
  * Copyright Ã‚Â© 2008 George McGinley Smith
  * All rights reserved.
  *
- * Redistribution and use in source and binary forms, with or without modification, 
+ * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
- * 
- * Redistributions of source code must retain the above copyright notice, this list of 
+ *
+ * Redistributions of source code must retain the above copyright notice, this list of
  * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list 
- * of conditions and the following disclaimer in the documentation and/or other materials 
+ * Redistributions in binary form must reproduce the above copyright notice, this list
+ * of conditions and the following disclaimer in the documentation and/or other materials
  * provided with the distribution.
- * 
- * Neither the name of the author nor the names of contributors may be used to endorse 
+ *
+ * Neither the name of the author nor the names of contributors may be used to endorse
  * or promote products derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
  * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
  *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
  *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
  * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
- * OF THE POSSIBILITY OF SUCH DAMAGE. 
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
 */
 
@@ -2919,17 +2919,17 @@ jQuery.easing.jswing=jQuery.easing.swing;jQuery.extend(jQuery.easing,{def:"easeO
 /*!
  * The Final Countdown for jQuery v2.0.4 (http://hilios.github.io/jQuery.countdown/)
  * Copyright (c) 2014 Edson Hilios
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
  * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
@@ -2949,7 +2949,7 @@ jQuery.easing.jswing=jQuery.easing.swing;jQuery.extend(jQuery.easing,{def:"easeO
 // Licensed under the terms of the MIT license.
 
 // People involved
-//  - Balazs Galambosi (maintainer)   
+//  - Balazs Galambosi (maintainer)
 //  - Michael Herf     (Pulse Algorithm)
 
 (function(){
@@ -3631,7 +3631,6 @@ $( document ).ready(function() {
  * @projectDescription  jQuery plugin for dynamically displaying unobtrusive messages in the browser. Mimics the behavior of the MacOS program "Growl."
  * @version 0.1.0
  *
- * @requires jquery.js (tested with 1.2.6)
  *
  * @param fadeInSpeed           int - Duration of fade in animation in miliseconds
  *                          default: 500
@@ -3864,7 +3863,7 @@ $( document ).ready(function() {
 			function setWidth() {
 				var width;
 				var style = window.getComputedStyle ? window.getComputedStyle(ta, null) : false;
-				
+
 				if (style) {
 
 					width = ta.getBoundingClientRect().width;
@@ -3899,7 +3898,7 @@ $( document ).ready(function() {
 				$.each(typographyStyles, function(i,val){
 					styles[val] = $ta.css(val);
 				});
-				
+
 				$(mirror).css(styles).attr('wrap', $ta.attr('wrap'));
 
 				setWidth();
@@ -3927,8 +3926,8 @@ $( document ).ready(function() {
 				}
 
 				if (!ta.value && options.placeholder) {
-					// If the textarea is empty, copy the placeholder text into 
-					// the mirror control and use that for sizing so that we 
+					// If the textarea is empty, copy the placeholder text into
+					// the mirror control and use that for sizing so that we
 					// don't end up with placeholder getting trimmed.
 					mirror.value = ($ta.attr("placeholder") || '') + options.append;
 				} else {
@@ -4220,18 +4219,18 @@ BestInPlaceEditor.prototype = {
         self.okButtonClass = self.element.data("bipOkButtonClass") || self.okButtonClass || BestInPlaceEditor.defaults.okButtonClass;
         self.cancelButton = self.element.data("bipCancelButton") || self.cancelButton;
         self.cancelButtonClass = self.element.data("bipCancelButtonClass") || self.cancelButtonClass || BestInPlaceEditor.defaults.cancelButtonClass;
-        
+
         // Fix for default values of 0
         if (self.element.data("bipPlaceholder") == null) {
           self.placeHolder = BestInPlaceEditor.defaults.locales[''].placeHolder;
         } else {
           self.placeHolder = self.element.data("bipPlaceholder");
         }
-        
+
         self.inner_class = self.element.data("bipInnerClass");
         self.html_attrs = self.element.data("bipHtmlAttrs");
         self.original_content = self.element.data("bipOriginalContent") || self.original_content;
-        
+
         // if set the input won't be satinized
         self.display_raw = self.element.data("bip-raw");
 
@@ -4527,9 +4526,9 @@ BestInPlaceEditor.forms = {
               var e = document.createEvent("MouseEvents");
               e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
               this.element.find("select")[0].dispatchEvent(e);
-            } 
+            }
             catch(e) {
-              // browser doesn't support this, e.g. IE8 
+              // browser doesn't support this, e.g. IE8
             }
         },
 
@@ -8341,7 +8340,7 @@ function onYouTubePlayerAPIReady() {
         pause: function () {},
         walk:  function () {},
         slides: [
-            // {   
+            // {
             //  src:                null,
             //  color:              null,
             //  delay:              null,
@@ -8406,7 +8405,7 @@ function onYouTubePlayerAPIReady() {
         if (this.settings.animationRegister instanceof Array === false) {
             this.settings.animationRegister = [ this.settings.animationRegister ];
         }
-        
+
         this.transitions = this.transitions.concat(this.settings.transitionRegister);
         this.animations  = this.animations.concat(this.settings.animationRegister);
 
@@ -8439,7 +8438,7 @@ function onYouTubePlayerAPIReady() {
             // Wrapper with content
             if (!isBody) {
                 this.$elmt.css('height', this.$elmt.css('height'));
-                
+
                 $wrapper = $('<div class="vegas-wrapper">')
                     .css('overflow', this.$elmt.css('overflow'))
                     .css('padding',  this.$elmt.css('padding'));
@@ -8526,7 +8525,7 @@ function onYouTubePlayerAPIReady() {
             if (this.total > 1 && !this.paused && !this.noshow) {
                 this.timeout = setTimeout(function () {
                     self.next();
-                }, this._options('delay')); 
+                }, this._options('delay'));
             }
         },
 
@@ -8559,7 +8558,7 @@ function onYouTubePlayerAPIReady() {
         },
 
         _video: function (srcs) {
-            var video, 
+            var video,
                 source,
                 cacheKey = srcs.toString();
 
@@ -8605,7 +8604,7 @@ function onYouTubePlayerAPIReady() {
             var self   = this,
                 delay  = duration / 10,
                 volume = video.volume + 0.09;
-            
+
             if (volume < 1) {
                 video.volume = volume;
 
@@ -8680,7 +8679,7 @@ function onYouTubePlayerAPIReady() {
             }
 
             $slide = $('<div class="vegas-slide"></div>');
-            
+
             if (this.support.transition && transition) {
                 $slide.addClass('vegas-transition-' + transition);
             }
@@ -8793,7 +8792,7 @@ function onYouTubePlayerAPIReady() {
                 if (video.readyState === 4) {
                     video.currentTime = 0;
                 }
-                
+
                 video.play();
                 go();
             } else {
@@ -8886,8 +8885,8 @@ function onYouTubePlayerAPIReady() {
             if (fn === 'init') {
                 params = [ this.settings ];
             } else {
-                params = [ 
-                    this.slide, 
+                params = [
+                    this.slide,
                     this.settings.slides[this.slide]
                 ];
             }
@@ -8908,7 +8907,7 @@ function onYouTubePlayerAPIReady() {
                 if (value === undefined) {
                     return this.settings[key];
                 }
-                this.settings[key] = value; 
+                this.settings[key] = value;
             } else {
                 return this.settings;
             }
@@ -8917,12 +8916,12 @@ function onYouTubePlayerAPIReady() {
             if (this.settings.slides !== oldSlides) {
                 this.total  = this.settings.slides.length;
                 this.noshow = this.total < 2;
-                this._preload();   
+                this._preload();
             }
         },
 
         destroy: function () {
-            clearTimeout(this.timeout); 
+            clearTimeout(this.timeout);
 
             this.$elmt.removeClass('vegas-container');
             this.$elmt.find('> .vegas-slide').remove();
@@ -8936,7 +8935,7 @@ function onYouTubePlayerAPIReady() {
             if (this.settings.overlay) {
                 this.$overlay.remove();
             }
-            
+
             this.elmt._vegas = null;
         }
     };
@@ -8995,22 +8994,3 @@ function onYouTubePlayerAPIReady() {
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
