@@ -17,15 +17,17 @@ class EventsController < ApplicationController
     @event.host = User.find(params["host_id"])
     @event.users << current_user
     @event.save
-    redirect_to root_url
   end
 
   def rsvp
-    @event = Event.find(params["event_id"])
+    @event = Event.find(params["id"])
     @event.users << current_user
     @event.save
     current_user.save
-    redirect_to root_url
+  end
+
+  def show
+    @event = Event.find(params["id"])
   end
 
   def destroy

@@ -31,12 +31,13 @@
 <div class="jumbotron">
 <blockquote>
 <% @user.events.each do |event| %>
-
+<div id='<%= event.id %>'>
   <h3><%= event.title %></h3>
 <blockquote>
 <h4>Karma: <%= event.points.length %></h4>
   <% array = [] %>
-<h4>From: <% event.points.each do |point| %>
+<h4>From:
+        <% event.points.each do |point| %>
         <%array << point.sender.name %>
         <% end %>
         <% new_array = array.uniq %>
@@ -53,10 +54,12 @@
 <% end %> </h4>
 </blockquote>
 </div>
+</div>
 
 <% if user_signed_in? %>
-  <h2>Give <%=@user.name%> Karma for something awesome they've done! You have <%= current_user.giveable_karma %> Karma left to give away.</h2>
-  <%= form_tag('/points', method: 'post') do %>
+  <h2>Give <%=@user.name%> Karma for something awesome they've done!</h2>
+  <div id='giveable_karma'><h2>You have <%= current_user.giveable_karma %> Karma left to give away.</h2></div>
+  <%= form_tag('/points', method: 'post', remote: true) do %>
     <%= label_tag("Please select an event to award a karma point") %>
     <%= hidden_field_tag :receiver_id, @user.id %>
     <%= hidden_field_tag :sender_id, current_user.id %>
@@ -65,7 +68,7 @@
   <% end %>
 <% end %>
 
-<h2>Karma Received: <%= @points_received.length %></h2>
+<h2>Karma <%= @user.name%> has received: <div id="total_karma_uptick"><%= @points_received.length %></h2></div>
 
 <section class="action2 container-fluid text-center wow fadeIn">
     <div class="row">
