@@ -1,4 +1,5 @@
 $('#total_karma_uptick').html('<%= @points_received.length %>')
+debugger;
 $('#<%=@event.id%>').html("<%= j render(:partial => 'points/mevent') %>")
 var y = $(window).scrollTop();  //your current y position on the page
 $(window).scrollTop(y-300);
