@@ -59,13 +59,9 @@
 <% if user_signed_in? %>
   <h2>Give <%=@user.name%> Karma for something awesome they've done!</h2>
   <div id='giveable_karma'><h2>You have <%= current_user.giveable_karma %> Karma left to give away.</h2></div>
-  <%= form_tag('/points', method: 'post', remote: true) do %>
-    <%= label_tag("Please select an event to award a karma point") %>
-    <%= hidden_field_tag :receiver_id, @user.id %>
-    <%= hidden_field_tag :sender_id, current_user.id %>
-    <%= collection_select :events, :id, @user.events, :id, :title %>
-    <%= submit_tag('Submit') %>
-  <% end %>
+  <div id='give_karma'>
+    <%= render 'points' %>
+  </div>
 <% end %>
 
 <h2>Karma <%= @user.name%> has received: <div id="total_karma_uptick"><%= @points_received.length %></h2></div>
