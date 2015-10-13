@@ -14,7 +14,8 @@ gem 'devise'
 gem 'best_in_place'
 gem 'rails-erd'
 gem 'change-ruby'
-gem 'carrierwave' 
+gem 'carrierwave'
+gem "dynamic_form"
 
 group :development, :test do
   gem 'byebug'

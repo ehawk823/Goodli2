@@ -16,7 +16,9 @@ class EventsController < ApplicationController
     @event.description = params["description"]
     @event.host = User.find(params["host_id"])
     @event.users << current_user
-    @event.save
+    unless @event.save
+      render 'error.js'
+    end
   end
 
   def rsvp

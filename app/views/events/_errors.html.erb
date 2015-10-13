@@ -1,11 +1,12 @@
-<% if @event.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@event.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-  <ul>
-  <% @event.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+<div class='alert alert-danger' role='alert'>
+  <% if @event.errors.messages[:title] != nil %>
+    <p>Your title <%= @event.errors.messages[:title][0] %></p>
   <% end %>
-  </ul>
+  <% if @event.errors.messages[:location] != nil %>
+    <p>Your location <%= @event.errors.messages[:location][0] %></p>
+  <% end %>
+  <% if @event.errors.messages[:description] != nil %>
+    <p>Your description <%= @event.errors.messages[:description][0] %></p>
+  <% end %>
 </div>
-<% end %>
