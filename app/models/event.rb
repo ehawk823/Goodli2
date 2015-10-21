@@ -16,4 +16,14 @@ class Event < ActiveRecord::Base
     new_array = array.uniq
     new_array
   end
+
+  def attendees
+    array = []
+    self.users.each do |user|
+      array <<  user.name
+    end
+      new_array = array.uniq
+      new_array
+  end
+  
 end

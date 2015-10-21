@@ -10,15 +10,10 @@
           <h4><li>Date: <%= @event.date %> </li></h4>
           <h4><li>Attendees:
             <div id="new_attendee">
-            <% array = [] %>
-            <% @event.users.each do |user| %>
-              <%array <<  user.name %>
-            <% end %>
-              <% new_array = array.uniq %>
-              <% new_array.each do |name| %>
+              <% @event.attendees.each do |name| %>
                 <%= name %>,
               <% end %>
-              <% if array.length == 0 %>
+              <% if @event.attendees.length == 0 %>
                 Nobody yet!
               <% else %>
                 and more to come!
