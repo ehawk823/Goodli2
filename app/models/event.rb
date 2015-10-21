@@ -7,4 +7,13 @@ class Event < ActiveRecord::Base
   validates :title, length: { maximum: 30, too_long: "%{count} characters is the maximum allowed"}
   validates :description, length: { minimum: 30 }
   validates :location, length: { maximum: 30, too_long: "%{count} characters is the maximum allowed"}
+
+  def point_givers
+    array = []
+    self.points.each do |point|
+      array << point.sender.name
+    end
+    new_array = array.uniq
+    new_array
+  end
 end
