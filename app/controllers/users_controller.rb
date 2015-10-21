@@ -10,34 +10,16 @@ class UsersController < ApplicationController
   end
 
   def update
-    if params[:user][:image] == nil
-      @image = current_user.image
-    else
-      current_user.image = params[:user][:image]
-      @image = current_user.image
-      current_user.save
+    new_update = UserUpdateService.new(params, current_user)
+    if params[:user][:image] != nil
+      new_update.update_image
       redirect_to :back
-    end
-    if params[:user][:name] == nil
-      @name = current_user.name
-    else
-      current_user.name = params[:user][:name]
-      @name = current_user.name
-      current_user.save
-    end
-    if params[:user][:location] == nil
-      @location = current_user.location
-    else
-      current_user.location = params[:user][:location]
-      @location = current_user.location
-      current_user.save
-    end
-    if params[:user][:bio] == nil
-      @mission = current_user.bio
-    else
-      current_user.bio = params[:user][:bio]
-      @mission = current_user.bio
-      current_user.save
-    end
+    end 
+    new_update.update_name
+    new_update.update_location
+    new_update.update_mission
+    @name = current_user.name
+    @location = current_user.location
+    @mission = current_user.bio
   end
 end

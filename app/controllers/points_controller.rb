@@ -9,22 +9,25 @@ class PointsController < ApplicationController
     @point.receiver = User.find(params["receiver_id"])
     @event = Event.find(params["events"]["id"])
     @point.sender = User.find(params["sender_id"])
-    @point.sender.giveable_karma -= 1
-    @point.sender.save
     @user = User.find(params["receiver_id"])
-    @user.giveable_karma += 2
-    @user.save
+    karma_increment
     @event.points << @point
     @point.save
     @points_received = Point.where(receiver_id: params["receiver_id"])
   end
 
   def show
-
   end
 
   def index
     @point = Point.all
+  end
+
+  def karma_increment
+    @user.giveable_karma += 2
+    @user.save
+    @point.sender.giveable_karma -= 1
+    @point.sender.save
   end
 
 end
