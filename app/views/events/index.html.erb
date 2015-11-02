@@ -32,7 +32,7 @@
 
                     <h4>Creator: <%= link_to event.host.name, controller: "users", action: "show", id: event.host.id %></h4>
                     <h4>Location: <%= event.location %></h4>
-                    <h4>Date: <%= event.date %> </h4>
+                    <h4>Date: <%= event.date.in_time_zone("EST").to_formatted_s(:short) %> (EST)</h4>
                   </br>
                 <% end %>
               <% end %>
