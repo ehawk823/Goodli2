@@ -6,7 +6,7 @@
     <div class="intro-body">
         <!-- <img src="img/logo.png" alt="" class="wow fadeIn" data-wow-duration="4s" data-wow-delay=".4s"> -->
         <div id="clock" class="wow fadeIn" data-wow-duration="6s" data-wow-delay=".6s"></div>
-        <p class="intro-text wow fadeIn" data-wow-duration="7s" data-wow-delay=".7s"><h1>GOODli is the premier social impact social network. Create and attend meaningful events, build your karma, and connect with users across the globe to advance your social impact mission. </h1></p>
+        <p class="intro-text wow fadeIn" data-wow-duration="7s" data-wow-delay=".7s"><h1><%= image_tag "glogo.png", size: "600"%></h1></p>
 
     </div>
 
@@ -23,16 +23,20 @@
         <div class="col-lg-8 col-lg-offset-2">
           <div style="background:transparent !important" class="jumbotron">
             <div class="new_event">
-              <center><h1>List of Events</h1></center>
+              <center><h1>Upcoming Events</h1></center>
               <br></br>
-              <% @events.each do |event| %>
-                <h3><%= link_to event.title, controller: "events", action: "show", id: event.id %></h3>
-                  <ul>
-                    <h4><li>Creator: <%= link_to event.host.name, controller: "users", action: "show", id: event.host.id %></li></h4>
-                    <h4><li>Location: <%= event.location %></li></h4>
-                    <h4><li>Date: <%= event.date %> </li></h4>
-                  </ul>
+              <center>
+              <% @dated_events.each do |event| %>
+                <% if event.date > Time.now %>
+                  <h3><%= link_to event.title, controller: "events", action: "show", id: event.id %></h3>
+
+                    <h4>Creator: <%= link_to event.host.name, controller: "users", action: "show", id: event.host.id %></h4>
+                    <h4>Location: <%= event.location %></h4>
+                    <h4>Date: <%= event.date %> </h4>
+                  </br>
+                <% end %>
               <% end %>
+            </center>
             </div>
           </div>
         </div>
@@ -72,7 +76,7 @@
 <section class="action2 container-fluid text-center wow fadeIn">
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
-            <h4>Created by Chris McGuigan, Evan Hawk and George Toothman. Find the code and an overview <a href="https://github.com/ehawk823/Goodli2">here</a>.</h4>
+            <h4>GOODli is the premier social impact social network. Create and attend meaningful events, build your karma, and connect with users across the globe to advance your social impact mission. Find the code and an overview <a href="https://github.com/ehawk823/Goodli2">here</a>.</h4>
 
         </div>
     </div>

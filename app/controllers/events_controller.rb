@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
+    @dated_events = @events.sort_by &:date
     @points = Point.all
   end
 

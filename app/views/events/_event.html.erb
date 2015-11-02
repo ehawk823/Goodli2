@@ -1,6 +1,7 @@
+<center>
 <h3><%= link_to @event.title, controller: "events", action: "show", id: @event.id %></h3>
-  <ul>
-    <h4><li>Creator: <%= link_to @event.host.name, controller: "users", action: "show", id: @event.host.id %></li></h4>
-    <h4><li>Location: <%= @event.location %></li></h4>
-    <h4><li>Date: <%= @event.date %> </li></h4>
-  </ul>
+    <h4>Creator: <%= link_to @event.host.name, controller: "users", action: "show", id: @event.host.id %></h4>
+    <h4>Location: <%= @event.location %></h4>
+    <% binding.pry %>
+    <h4>Date: <%= @event.date %> </h4>
+</center>
