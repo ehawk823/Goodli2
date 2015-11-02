@@ -7,7 +7,7 @@
           <h4><li>Description: <%= @event.description %> </li></h4>
           <h4><li>Creator: <%= link_to @event.host.name, controller: "users", action: "show", id: @event.host.id %></li></h4>
           <h4><li>Location: <%= @event.location %></li></h4>
-          <h4><li>Date: <%= @event.date %> </li></h4>
+          <h4><li>Date: <%= @event.date.in_time_zone("EST").to_formatted_s(:short) %> (EST) </li></h4>
           <h4><li>Attendees:
             <div id="new_attendee">
               <% @event.attendees.each do |name| %>
